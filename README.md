@@ -15,9 +15,9 @@ To have a unified library that allows to do Spotify authentication through their
 
 ### v0.9.0
 
-[ ] Android auth flow
+- [ ] Android auth flow
 
 ### v1.0.0
 
-[ ] iOS auth flow
+- [ ] iOS auth flow
 
