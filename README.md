@@ -4,7 +4,8 @@
 Note: Heavily work in progress
 
   ```
-  yarn add wiyarmir/react-native-spotify-auth
+  $ yarn add wiyarmir/react-native-spotify-auth
+  $ react-native link react-native-spotify-auth
   ```
 
 ## Objectives
