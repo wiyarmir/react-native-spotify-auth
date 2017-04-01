@@ -1,6 +1,12 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="es.wiyarmir.rnspotifyauth">
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.reactlibrary">
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <application>
+        <activity
+            android:name="com.spotify.sdk.android.authentication.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
 </manifest>
-  

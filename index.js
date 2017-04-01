@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNReactNativeSpotifyAuth } = NativeModules;
+const { RNSpotifyAuth } = NativeModules;
 
-export default RNReactNativeSpotifyAuth;
+export default RNSpotifyAuth;

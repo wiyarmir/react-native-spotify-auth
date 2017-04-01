@@ -13,4 +13,4 @@ wget $SDK_URL
 unzip $SDK_FILE
 cd ..
 
-mkdir -p android/lib/ && cp "build/$SDK_FOLDER/spotify-auth-$SDK_VERSION.aar" android/lib/
+mkdir -p android/libs/ && cp "build/$SDK_FOLDER/spotify-auth-$SDK_VERSION.aar" android/libs/
