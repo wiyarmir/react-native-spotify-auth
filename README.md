@@ -7,6 +7,20 @@ Note: Heavily work in progress
   $ yarn add wiyarmir/react-native-spotify-auth
   $ react-native link react-native-spotify-auth
   ```
+  
+Unfortunately, until I figure out a better way, you need to manually exclude the spotify lib from your project. E.g, in your android subproject, go to  `app/build.gradle` and change
+
+```groovy
+compile project(':react-native-spotify-auth'))
+```
+
+To this
+
+```groovy
+compile(project(':react-native-spotify-auth')) {
+    exclude group: 'com.spotify.sdk'
+}
+```
 
 ## Objectives
 
