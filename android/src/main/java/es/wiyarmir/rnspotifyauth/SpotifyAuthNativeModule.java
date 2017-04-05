@@ -25,8 +25,6 @@ public class SpotifyAuthNativeModule extends ReactContextBaseJavaModule implemen
     private static final String E_CANCELLED = "E_CANCELLED";
 
     private static final int REQUEST_CODE = 1337;
-    private static final String REDIRECT_URI = "customuri://callback";
-    private static final String CLIENT_ID = "CHANGEME";
 
     private final List<Promise> promises = Collections.synchronizedList(new ArrayList<Promise>());
 
@@ -64,7 +62,7 @@ public class SpotifyAuthNativeModule extends ReactContextBaseJavaModule implemen
     }
 
     @ReactMethod
-    public void launchAuth(final Promise promise) {
+    public void launchAuth(String clientId, String redirectUri, final Promise promise) {
         Activity currentActivity = getCurrentActivity();
 
         if (currentActivity == null) {
@@ -75,7 +73,7 @@ public class SpotifyAuthNativeModule extends ReactContextBaseJavaModule implemen
         promises.add(promise);
 
         try {
-            AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(CLIENT_ID, AuthenticationResponse.Type.TOKEN, REDIRECT_URI);
+            AuthenticationRequest.Builder builder = new AuthenticationRequest.Builder(clientId, AuthenticationResponse.Type.TOKEN, redirectUri);
 
             builder.setScopes(new String[]{});
             AuthenticationRequest request = builder.build();
