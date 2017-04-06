@@ -49,6 +49,41 @@ Add the Spotify auth `.aar` file to the `android/libs/` directory of your projec
 
 WIP
 
+## Usage
+
+### API
+
+The default export provides you with a class and flowtype annotations.
+
+Method `startLogin()` returns a `Promise` that will resolve with a SpotifyAuthData type.
+
+```js
+type SpotifyAuthData = {
+  token: string,
+  code: string,
+  error: string,
+  state: string,
+  expiresIn: number,
+};
+```
+
+### Example
+
+```js
+import SpotifyAuth from 'react-native-spotify-auth';
+
+let auth = new SpotifyAuth(Constants.SPOTIFY_CLIENT_ID, Constants.SPOTIFY_REDIRECT_URI);
+auth.startLogin()
+  .then(
+    function(data) {
+      console.log(data.token);
+    },
+    function(error){
+      console.warn(error);
+    }
+  );
+```
+
 ## Roadmap
 
 ### v0.9.0
