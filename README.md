@@ -12,14 +12,13 @@ $ yarn add wiyarmir/react-native-spotify-auth
 $ react-native link react-native-spotify-auth
 ```
   
-Unfortunately, transitive AAR dependencies are not bundled. Since Spotify SDK is not published in Maven, you need to manually include spotify lib from your project. 
+Unfortunately, transitive AAR dependencies are not bundled. Since Spotify SDK is not published in Maven or pods, you need to manually include spotify lib from your project. 
+
+### Android
+
+#### Option 1
 
 There are two options for this.
-
-### Option 1
-
-#### Android
-
 In your `android/build.gradle` file add the following:
 
 ```diff
@@ -41,17 +40,11 @@ allprojects {
 }
 ```
 
-#### iOS
-
-WIP
-
-### Option 2
-
-#### Android
+#### Option 2
 
 Add the Spotify auth `.aar` file to the `android/libs/` directory of your project. Current used version is `1.0.0-beta13` and can be found in [their GitHub repo](https://github.com/spotify/android-sdk/tree/1.0.0-beta13)
 
-#### iOS
+### iOS
 
 WIP
 
