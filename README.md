@@ -16,9 +16,10 @@ Unfortunately, transitive AAR dependencies are not bundled. Since Spotify SDK is
 
 ### Android
 
+There are two options for this.
+
 #### Option 1
 
-There are two options for this.
 In your `android/build.gradle` file add the following:
 
 ```diff
