@@ -1,30 +1,59 @@
 
 # react-native-spotify-auth
 
-Note: Heavily work in progress
-
-  ```
-  $ yarn add wiyarmir/react-native-spotify-auth
-  $ react-native link react-native-spotify-auth
-  ```
-  
-Unfortunately, until I figure out a better way, you need to manually exclude the spotify lib from your project. E.g, in your android subproject, go to  `app/build.gradle` and change
-
-```groovy
-compile project(':react-native-spotify-auth'))
-```
-
-To this
-
-```groovy
-compile(project(':react-native-spotify-auth')) {
-    exclude group: 'com.spotify.sdk'
-}
-```
-
 ## Objectives
 
 To have a unified library that allows to do Spotify authentication through their native SDK, both in iOS and Android.
+
+## Installing
+
+```bash
+$ yarn add wiyarmir/react-native-spotify-auth
+$ react-native link react-native-spotify-auth
+```
+  
+Unfortunately, transitive AAR dependencies are not bundled. Since Spotify SDK is not published in Maven, you need to manually include spotify lib from your project. 
+
+There are two options for this.
+
+### Option 1
+
+#### Android
+
+In your `android/build.gradle` file add the following:
+
+```diff
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+         }
++        flatDir {
++            dirs "$rootDir/../node_modules/react-native-spotify-auth/android/libs"
++        }
+         flatDir {
+             dirs "libs"
+         }
+     }
+}
+```
+
+#### iOS
+
+WIP
+
+### Option 2
+
+#### Android
+
+Add the Spotify auth `.aar` file to the `android/libs/` directory of your project. Current used version is `1.0.0-beta13` and can be found in [their GitHub repo](https://github.com/spotify/android-sdk/tree/1.0.0-beta13)
+
+#### iOS
+
+WIP
 
 ## Roadmap
 
