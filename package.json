@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A React Native library for Spotify auth",
   "scripts": {
-    "preinstall": "./fetch-dependencies.sh"
+    "fetch-libs": "node fetch-libs.js"
   },
   "main": "index.js",
   "keywords": [
@@ -12,9 +12,6 @@
     "spotify-auth"
   ],
   "nativePackage": true,
-  "devDependencies": {
-    "react-native": "0.41.2"
-  },
   "peerDependencies": {
     "react-native": "^0.41.2"
   },
