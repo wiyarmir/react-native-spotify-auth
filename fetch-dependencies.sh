@@ -15,7 +15,7 @@ rm -rf build/
 mkdir -p build
 
 cd build
-curl $SDK_URL
+curl -L $SDK_URL
 unzip $SDK_FILE
 cd ..
 
