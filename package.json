@@ -1,6 +1,6 @@
 {
   "name": "react-native-spotify-auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React Native library for Spotify auth",
   "scripts": {
     "preinstall": "./fetch-dependencies.sh"
@@ -13,10 +13,10 @@
   ],
   "nativePackage": true,
   "devDependencies": {
-    "react-native": "0.41.2"
+    "react-native": "0.51.0"
   },
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react-native": "^0.51.0"
   },
   "author": {
     "name": "Guillermo Orellana",
