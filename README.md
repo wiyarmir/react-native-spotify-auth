@@ -5,6 +5,10 @@
 
 To have a unified library that allows to do Spotify authentication through their native SDK, both in iOS and Android.
 
+## Prerequisites
+
+Important! This library requires you to have registered your apps properly in the [Spotify developers dashboard](https://developer.spotify.com/dashboard/applications), including Bundle Id/Package Name and SHA1 signature.
+
 ## Installing
 
 ```bash
