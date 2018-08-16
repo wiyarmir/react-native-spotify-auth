@@ -43,7 +43,6 @@ jobs:
           path: ~/react-native-spotify-auth
       - run: echo 'export TERM=xterm' >> $BASH_ENV
       - run: mkdir -p artifacts/
-      - run: sdkmanager "platform-tools" "build-tools;23.0.1" "platforms;android-23"
       - run:
           name: Fetch logcat and props
           background: true
@@ -52,8 +51,8 @@ jobs:
             adb shell getprop > artifacts/props.txt
       - run:
           command: |
-            ./gradlew assembleDebug
-            ./gradlew testDebug
+            ./gradlew assembleDebug --console=plain
+            ./gradlew testDebug --console=plain
       - store_test_results:
           path: test-results
 
