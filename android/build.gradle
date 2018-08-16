@@ -25,19 +25,17 @@ android {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
     maven {
         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
         url "$rootDir/../node_modules/react-native/android"
-    }
-    flatDir {
-        dirs "libs"
     }
 }
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile('com.spotify.sdk:spotify-auth:+@aar') {
+    compile('com.github.spotify:android-auth:1.0.0-alpha') {
         transitive = true
     }
 }
